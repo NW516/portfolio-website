@@ -9,6 +9,8 @@ h6 {
 }
 body,
 html {
+  box-sizing: 0;
+  margin: 0;
   height: 100%;
   color: rgb(59, 58, 58);
   line-height: 1.8;
@@ -37,7 +39,7 @@ html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('./images/portfolio-bg.jpg');
+  background-image: url('./images/home-bg-optimized.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +49,7 @@ html {
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url('/images/yosemite.jpg');
+  background-image: url('./images/projects-bg-optimized.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,7 +59,7 @@ html {
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url('/images/israel.jpg');
+  background-image: url('./images/experience-bg-optimized.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -115,26 +117,69 @@ html {
   height: 500px;
 }
 
-.timeless-pics {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 75%;
-  flex-direction: column;
+
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1rem;
 }
 
-.timeless-pics img {
-  width: 100%;
-  height: 500px;
-  margin: 10px;
+.responsive-image {
+  max-width: 70%;
 }
+
+.project-image {
+  width: 80%;
+  height: auto;
+}
+
+.section-subhead {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.name-text,
+.section-title {
+  text-align: center;
+  font-size: 3.5vh;
+}
+
+.name-subhead {
+  text-align: center;
+  font-size: 2.5vh;
+}
+
+
+@media screen and (min-width: 1000px) {
+  .project-image {
+    width: 70%;
+    height: 70%;
+  }
+
+  .name-text,
+  .section-title {
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  .name-subhead {
+    text-align: center;
+    font-size: 3vw;
+  }
+
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-width: 600px) {
+
   .bgimg-1,
   .bgimg-2,
   .bgimg-3 {
-    background-color: turquoise;
+    background-color: mediumseagreen;
     background-image: none;
+    background-size: cover;
+    width: 100%;
   }
   .project-links {
     flex-direction: column;
@@ -150,13 +195,6 @@ html {
   }
   .screenshot {
     width: 300px;
-  }
-  .timeless-pics {
-    flex-direction: column;
-  }
-  .timeless-pics img {
-    width: 100%;
-    height: 75%;
   }
   .w3-card-2 img {
     max-width: 200px;
